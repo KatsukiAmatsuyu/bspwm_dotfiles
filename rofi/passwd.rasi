@@ -1,0 +1,102 @@
+/************************************************/
+
+configuration {
+  font:			"Roboto Mono 11";
+  sort:			true;
+  sorting-method:	"normal";
+  disable-history:	false;
+  scroll-method:	0;
+  window-thumbnail:	true;
+
+filebrowser {
+  directories-first:	true;
+  sorting-method:	"name";
+  }
+}
+
+/************************************************/
+
+@theme "/dev/null"
+
+/************************************************/
+
+* {
+  background:		#1A1826;
+  foreground:		#D9E0EE;
+  button:		#FAE3B0;
+  background-color:	@background;
+  text-color:		@foreground;
+}
+
+/************************************************/
+
+mainbox { children: [ inputbar, listview ]; }
+
+/************************************************/
+
+window {
+  transparency:		"real";
+  width:		300px;
+  border:		3;
+  border-color: @button;
+  border-radius:	0;
+  height:		300px;
+}
+
+/************************************************/
+
+inputbar {
+  children:		[ prompt, entry ];
+  expand:		false;
+  padding:		5;
+}
+
+prompt { 
+  enabled: true; 
+  background-color:	@background;
+  padding:		5px;
+  border-radius:	0;
+  margin:		0px 20px 0px 0px;
+}
+
+entry {
+  background-color:	@background;
+  placeholder:		"Password";
+  expand:		true;
+  padding:		5px;
+  border-radius:	15px;
+}
+
+/************************************************/
+
+listview {
+  columns:		2;
+  cycle:		true;
+  dynamic:		true;
+  layout:		vertical;
+  scrollbar:		false;
+  padding: 10;
+}
+
+element {
+  orientation:		vertical;
+  border-radius:	0;
+  background-color:	@background;
+  margin: 0;
+}
+
+element-text {
+  expand:		true;
+  padding:		2 0 2 5;
+  background-color:	inherit;
+  text-color:		inherit;
+}
+
+element selected {
+  background-color:	@button;
+  text-color:		@background;
+  border-radius:	0;
+}
+
+/************************************************/
+

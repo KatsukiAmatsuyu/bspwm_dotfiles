@@ -1,0 +1,132 @@
+configuration {
+    modi: "window,run,drun";
+    show-icons: true;
+    font: "Roboto Mono 10.5";
+	display-drun: "Apps";
+	display-window: "Tabs";
+  display-run: "Run";
+}
+
+@import "colors.rasi"
+
+#window {
+    width: 620;
+    height: 440;
+    background-color: rgba(255,255,255,0);
+}
+
+#mainbox {
+    border:  3;
+	  border-color: @background;
+    border-radius: 0;
+    padding: 13;
+    background-color: @background-solid;
+}
+
+#textbox {
+    text-color: @white;
+}
+
+#listview {
+    columns: 1;
+    spacing: 0px;
+    cycle: false;
+    dynamic: true;
+    layout: vertical;
+	border: 0;
+	border-color: @selected-background;
+	border-radius: 0;
+    background-color: transparent;
+    padding: 10 0 0 0;
+}
+
+element {
+    margin: 1 0 5 0;
+    padding: 3 0 3 7;
+    border-radius: 3; 
+    orientation: horizontal;
+}
+
+element-icon {
+    size: 25;
+    padding: 0 5 0 0;
+}
+
+#element.normal.normal {
+    background-color: transparent;
+    text-color:       @foreground;
+    size: 0px;
+}
+
+#element.selected.normal {
+    background-color: @selected-background;
+    text-color:       @selected-foreground;
+    border-color: #d07ef2;
+}
+
+#element.alternate.normal {
+    background-color: transparent;
+    text-color:       @foreground;
+}
+
+#mode-switcher {
+    border:       0px 0px 0px ;
+    border-color: @separatorcolor;
+}
+
+#button {
+	background-color: @background;
+    spacing:    0;
+    text-color: @foreground;
+}
+
+#button.selected {
+    background-color: @selected-background;
+    text-color:       @selected-foreground;
+}
+
+#inputbar {
+    spacing: 0;
+    text-color: #D9E0EE;
+    margin: 0;
+    padding: 0 0 0 7;
+    background-color: @background;
+    border-radius: 9;
+}
+
+#case-indicator {
+    spacing:    0;
+    text-color: @foreground;
+    background-color: rgba(0,0,0,0);
+}
+
+#entry {
+    spacing:    0;
+    text-color: @foreground;
+    background-color: rgba(0,0,0,0);
+}
+
+#prompt {
+    spacing:    0;
+    text-color: @foreground;
+    background-color: rgba(0,0,0,0);
+}
+
+#textbox-prompt-colon {
+    expand:     false;
+    str:        ":";
+    margin:     0px 0.3em 0em 0em ;
+    text-color: @foreground;
+    background-color: rgba(0,0,0,0);
+}
+
+#inputbar {
+    children: [prompt,textbox-prompt-colon,entry,case-indicator];
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+    horizontal-align:   0;
+    vertical-align:     0.5;
+}

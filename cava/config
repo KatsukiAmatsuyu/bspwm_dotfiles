@@ -1,0 +1,14 @@
+[general]
+mode = waves
+framerate = 60
+
+[output]
+channels = stereo
+
+[color]
+;foreground = '#f5c2e7'
+
+gradient = 1
+gradient_count = 2 
+gradient_color_1 = '#DDB6F2'
+gradient_color_2 = '#f5c2e7'

@@ -1,0 +1,83 @@
+configuration {
+    modi: "window,run,drun";
+    /*theme: "clean";*/
+    show-icons: true;
+    font: "Roboto Mono 10.5";
+}
+
+@import "colors.rasi"
+
+* {
+}
+
+#window {
+    width: 300px;
+    height: 240;
+    background-color: @background-solid;
+    padding: 0;
+}
+
+#mainbox {
+    border:  0;
+	  border-color: @background;
+    padding: 0;
+    children: [listview];
+    background-color: @background-solid;
+}
+
+#listview {
+    columns: 1;
+    layout: vertical;
+    background-color: transparent;
+	margin: 10;
+}
+
+element {
+    margin: 1 0 3 0;
+    padding: 3 0 3 7;
+    border-radius: 3;
+    orientation: horizontal;
+}
+
+element-icon {
+    size: 25;
+    padding: 0 5 0 0;
+}
+
+#element.normal.normal {
+    background-color: rgba(0, 0, 0, 0);
+    text-color:       @foreground;
+}
+
+#element.selected.normal {
+    background-color: @selected-background;
+    text-color:       @selected-foreground;
+    border-color: #d07ef2;
+}
+
+#element.alternate.normal {
+    background-color: rgba(0,0,0,0);
+    text-color:       @foreground;
+}
+
+#mode-switcher {
+    border:       0px 0px 0px ;
+    border-color: @separatorcolor;
+}
+
+#button {
+    spacing:    0;
+    text-color: @foreground;
+}
+
+#button.selected {
+    background-color: @selected-background;
+    text-color:       @selected-foreground;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color: inherit;
+    horizontal-align: 0;
+    vertical-align: 0.5;
+}

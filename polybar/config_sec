@@ -1,0 +1,14 @@
+[bar/secbar]
+monitor = HDMI-1
+bottom = false
+width = 100%
+height = 22
+offset-x = 0
+offset-y = 0
+fixed-center = true
+override-redirect = false
+foreground = #D9E0EE
+background = #1E1D2F
+line-size = 2
+
+

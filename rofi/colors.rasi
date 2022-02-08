@@ -1,0 +1,18 @@
+* {
+    foreground:           #D9E0EE;
+    selected-foreground:  #1A1826;
+    
+    background:           #1A1826; 
+    background-solid:     #1A1826; 
+    selected-background:  #f5c2e7; /*#f9b578; *rgba(0, 0, 0, 40%);*/
+
+    /*#87b5d7;*/  
+    /*#6eacda;*/
+    /*#deca72;*/
+    /*#39c9fe;*/
+	
+	white: 				  #D9E0EE;
+    red:                  #F28FAD;
+    blue:                 #96CDFB;
+}
+
