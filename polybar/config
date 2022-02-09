@@ -34,7 +34,7 @@ fixed-center = true
 ; Dimension defined as pixel value (e.g. 35) or percentage (e.g. 50%),
 ; the percentage can optionally be extended with a pixel offset like so:
 ; 50%:-10, this will result in a width or height of 50% minus 10 pixels
-width = 98.1%
+width = 98.2%
 height = 33
 
 ; Offset defined as pixel value (e.g. 35) or percentage (e.g. 50%)
@@ -103,6 +103,9 @@ font-2 = FontAwesome5Free:style=Regular:size=8;4
 font-3 = FontAwesome5Brands:style=Regular:size=10;4
 font-4 = unifont:size=10;3
 font-5 = SourceHanSans-JP:style=Regular:size=7;3
+font-6 = Font Awesome 6 Free:style=Solid:size=8;3 
+font-7 = Font Awesome 6 Free:style=Regular:size=8;3 
+font-8 = Font Awesome 6 Brands:style=Regular:size=8;3
 
 ; Modules are added to one of the available blocks
 ;   modules-left = cpu ram
@@ -111,7 +114,7 @@ font-5 = SourceHanSans-JP:style=Regular:size=7;3
 ; modules-left = i3 spotify-main spotify-prev spotify-play-pause spotify-next
 modules-left = sepEmpty rofi sep1 music sep1 i3 bspwm
 modules-center = 
-modules-right = xkeyboard sep wireless-network sep audio sep memory sep cpu sep date sep battery sep powerbutton sepEmpty
+modules-right = kb sep wireless-network sep audio sep memory sep cpu sep date sep battery sep powerbutton sepEmpty
 
 ; The separator will be inserted between the output of each module
 separator =
@@ -193,6 +196,19 @@ enable-ipc = true
 
 ; Fallback click handlers that will be called if
 ; there's no matching module handler found.
+
+[module/kb]
+type = custom/script
+
+exec = sh $HOME/scripts/misc/getkblayout.sh
+label =  %output% 
+
+interval = 0
+
+click-left = sh $HOME/scripts/rofi/kblayout.sh &
+
+format-foreground = #DDB6F2
+format-padding = 0
 
 [module/music]
 type = custom/text
@@ -296,13 +312,14 @@ blacklist-0 = scroll lock
 layout-icon-0 = us;
 layout-icon-1 = ru;
 
-label-layout = %layout%
+label-layout =  %layout%
 label-layout-foreground = #DDB6F2
 label-layout-padding = 0
 
 label-indicator-padding = 1
 label-indicator-foreground = #DDB6F2
 
+click-left = sh $HOME/scripts/rofi/kblayout.sh &
 [module/bspwm]
 type = internal/bspwm
 pin-workspaces = true
@@ -451,13 +468,12 @@ format-connected = <ramp-signal> <label-connected>
 label-connected-foreground = #ABE9B3
 
 format-disconnected = <label-disconnected>
-label-disconnected = %{A1:sh $HOME/.config/rofi/wifi/wifi:}Not connected%{A}
+label-disconnected = %{A1:sh $HOME/.config/rofi/wifi/wifi:} Not connected%{A}
 label-disconnected-foreground = #F28FAD
 
 ramp-signal-foreground = #ABE9B3
 ramp-signal-0 = 
 ramp-signal-1 = 
-ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-5 = 

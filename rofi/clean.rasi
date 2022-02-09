@@ -43,7 +43,7 @@ configuration {
 element {
     margin: 1 0 5 0;
     padding: 3 0 3 7;
-    border-radius: 3; 
+    border-radius: 7; 
     orientation: horizontal;
 }
 

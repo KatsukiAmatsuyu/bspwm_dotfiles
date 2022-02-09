@@ -1,0 +1,104 @@
+/************************************************/
+
+configuration {
+  font:			"Roboto Mono 10.5";
+  sort:			true;
+  sorting-method:	"normal";
+  disable-history:	false;
+  scroll-method:	0;
+  window-thumbnail:	true;
+
+filebrowser {
+  directories-first:	true;
+  sorting-method:	"name";
+  }
+}
+
+/************************************************/
+
+@theme "/dev/null"
+
+/************************************************/
+
+* {
+  background:		#1A1826;
+  foreground:		#D9E0EE;
+  button:		#f5c2e7;
+  background-color:	@background;
+  text-color:		@foreground;
+}
+
+/************************************************/
+
+mainbox { children: [ inputbar, listview ]; }
+
+/************************************************/
+
+window {
+  transparency:		"real";
+  width:		350;
+  border:		3;
+  border-color: @background;
+  border-radius:	0;
+  height:		145;
+  padding: 0;
+  margin: 0;
+}
+
+/************************************************/
+
+inputbar {
+  children:		[ prompt ];
+  expand:		false;
+  padding:		10px 10px 10px 10px;
+}
+
+prompt { 
+  enabled: true; 
+  background-color:	@background;
+  padding:		5px;
+  border-radius:	0;
+  margin:		0px 20px 0px 0px;
+}
+
+entry {
+  background-color:	@background;
+  placeholder:		"Search";
+  expand:		true;
+  padding:		10px;
+  border-radius:	15px;
+}
+
+/************************************************/
+
+listview {
+  columns:		2;
+  cycle:		true;
+  dynamic:		true;
+  layout:		vertical;
+  scrollbar:		false;
+  padding: 10;
+}
+
+element {
+  orientation:		vertical;
+  border-radius:	3;
+  background-color:	@background;
+  margin: 1 0 5 0;
+  padding: 3 0 3 7;
+}
+
+element-text {
+  expand:		true;
+  background-color:	inherit;
+  text-color:		inherit;
+}
+
+element selected {
+  background-color:	@button;
+  text-color:		@background;
+  border-radius:	3;
+}
+
+/************************************************/
+
